@@ -1,0 +1,6 @@
+include README.rst
+include LICENSE
+include requirements.txt
+recursive-include ckanext/zurich *.html *.json *.js *.less *.css *.mo *.yml
+recursive-include ckanext/zurich/migration *.ini *.py *.mako
+recursive-include ckanext/zurich/public *.*

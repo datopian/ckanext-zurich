@@ -1,0 +1,14 @@
+# zurich-js:
+#   filter: rjsmin
+#   output: ckanext-zurich/%(version)s-zurich.js
+#   contents:
+#     - js/zurich.js
+#   extra:
+#     preload:
+#       - base/main
+
+# zurich-css:
+#   filter: cssrewrite
+#   output: ckanext-zurich/%(version)s-zurich.css
+#   contents:
+#     - css/zurich.css
