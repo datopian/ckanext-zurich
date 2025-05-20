@@ -18,4 +18,7 @@ class ZurichPlugin(plugins.SingletonPlugin):
 
     # IActions
     def get_actions(self):
-        return [package_show, package_search]    
+        return {
+            'package_show': package_show, 
+            'package_search': package_search
+        }
