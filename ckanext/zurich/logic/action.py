@@ -11,7 +11,7 @@ def add_resource_download_uri(package):
             resource['download_url'] = resource['url']
             continue
         upload = uploader.get_resource_uploader(resource)
-        filename = os.path.basename(resource['url'])
+        filename = os.path.basename(resource['url']).lower()
         key_path = upload.get_path(resource['id'], filename)
         params = {
                     'ResponseContentDisposition':
