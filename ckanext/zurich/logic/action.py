@@ -14,6 +14,7 @@ def add_resource_download_uri(package):
         filename = os.path.basename(resource['url']).lower()
         key_path = upload.get_path(resource['id'], filename)
         params = {
+                'expires_in': tk.config.get('ckanext.zurich.resource_download_url_expiration_time', 3600),
                     'ResponseContentDisposition':
                         'attachment; filename=' + filename,
                 }
