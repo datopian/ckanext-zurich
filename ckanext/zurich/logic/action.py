@@ -14,12 +14,11 @@ def add_resource_download_uri(package):
         filename = os.path.basename(resource['url']).lower()
         key_path = upload.get_path(resource['id'], filename)
         params = {
-                'expires_in': tk.config.get('ckanext.zurich.resource_download_url_expiration_time', 3600),
                     'ResponseContentDisposition':
                         'attachment; filename=' + filename,
                 }
         try:
-            resource['download_url'] = upload.get_signed_url_to_key(key_path, params, read_only=True)
+            resource['download_url'] = upload.get_signed_url_to_key(key_path, params, read_only=True, expires_in=tk.config.get('ckanext.zurich.resource_download_url_expiration_time', 3600))
         except Exception as e:
             log.error(f"An error occurred trying to get the {resource.get('name')} resource download URI")
             log.error(e)
